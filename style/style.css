@@ -1,9 +1,63 @@
+:root {
+    --clr-red-400: hsl(0, 100%, 52%);
+
+    --primary-color: rgb(249, 20, 234);
+    --secondary-color: rgba(51, 51, 51, 0.58);
+    --background-color: #fff;
+    --text-color: #000;
+
+    --ff: "Raleway", sans-serif;
+
+    --fs-header-responsive: clamp(1.5rem, 8vw + 1rem, 2.5rem);
+    --fs-header-medium: 1.75rem;
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+
+    --max-width: 1280px;
+
+    --margin-large: 4rem;
+}
+
 img {
     width: 100%;
     object-fit: cover;
 }
 
+
+body {
+    font-family: var(--ff);
+    font-optical-sizing: auto;
+    line-height: 1.4;
+}
+
+h1,
+h2 {
+    line-height: 1.1;
+    font-weight: var(--fw-bold);
+}
+
+/* clamp if we want a response font so that we can have a min/max, don't overuse! */
 h1 {
     font-size: clamp(1.5rem, 8vw + 1rem, 2.5rem);
-    /* font-size: 2.5rem; */
+    color: var(--primary-color)
+        /* font-size: 2.5rem; */
+}
+
+h2 {
+    font-size: var(--fs-header-medium);
+    color: hsl(from var(--primary-color) h s calc(l - 40));
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto var(--margin-large);
+}
+
+header {
+    background-color: hsla(from var(--primary-color) h s l / 0.3);
+}
+
+.main-image {
+    margin-block-end: var(--margin-large);
 }
